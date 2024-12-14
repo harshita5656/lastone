@@ -1,0 +1,65 @@
+<html> 
+<head>
+    <title>Varteries</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="nav-icons">
+                <button id="bkbtn">  <i class="fas fa-arrow-left"></i></button>
+            </div>
+            <div class="title">DOCMED-doctors</div>
+            <div class="nav-icons">
+               <button id="hmbtn"> <i class="fas fa-home"></i></button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="section-title">FIELDS</div>
+            <div class="input-group">
+                <label>domains</label>
+                <select id="disease-select" onchange="updateSubDiseases()">
+                    <option value="disabled selected">Select the domain</option>
+                    <option value="disease1">1. General Medical Specialties</option>
+                    <option value="disease2">2. Surgical Specialties</option>
+                    <option value="disease3">3. Diagnostic and Imaging Specialties</option>
+                    <option value="disease4">4. Organ/System-Specific Specialties</option>
+                    <option value="disease5">5. Emergency and Critical Care</option>
+                    <option value="disease6">6. Public Health and Preventative Medicine</option>
+                    <option value="disease7">7. Specialty Medicine</option>
+                    <option value="disease8">8. Emerging and Niche Fields</option>
+                </select>
+            </div>
+
+        <div class="input-group hidden">
+            <label for="sub-disease-select">specialities</label>
+            <select id="sub-disease-select">
+                <!-- Sub-diseases will populate dynamically -->
+            </select>
+        </div>
+                
+            <div class="input-group">
+                <label>Locations</label>
+                <select id="disabled selected">
+                   <option value="disabled selected">select the location you want</option>
+                    <option value="location1">P. J. Extension</option>
+                    <option value="location2">M.C.C. 'B' Block:</option>
+                    <option value="location3">Shamanur Road</option>
+                    <option value="location3">Vidyarthi Bhavan:</option>
+                    <option value="location3">K. R. Road:</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Hospital</label>
+                <select>
+                    <option value="hospital1">private</option>
+                    <option value="hospital2">government</option>  
+                </select>
+            </div>
+            <button class="submit-btn">Submit</button>
+        </div>
+    </div>
+    <script src="2.js"></script>
+</body>
+</html>

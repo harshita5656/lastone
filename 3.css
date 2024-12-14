@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* No gradient on box-shadow */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header .nav-icons {
+    display: flex;
+    gap: 50px;
+}
+
+.header .nav-icons i {
+    background:#fc5537; /* Apply gradient background */
+    -webkit-background-clip: text; /* Clip gradient to text */
+    color: transparent; /* Make text transparent to show gradient */
+    font-size: 18px;
+   
+}
+#bkbtn,#hmbtn{
+    border: none;          /* Removes the border */
+    background-color: inherit; /* Keeps the background color unchanged */
+    padding: 10px;         /* Optional: Adjust padding for better button size */
+    cursor: pointer;  
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+#bkbtn:hover, #hmbtn:hover {
+    transform: scale(1.1);             /* Slightly increase size on hover */
+  }
+  
+  /* Click (active) effect */
+  #bkbtn:active, #hmbtn:active {
+    transform: scale(0.9);             /* Slightly shrink on click */
+    background-color: rgba(0, 0, 0, 0.1); /* Add a subtle background color on click */
+  }
+  
+  /* Remove outline on focus */
+  #bkbtn:focus, #hmbtn:focus {
+    outline:none;}
+
+.header .title {
+    font-size: 18px;
+    font-weight: bold;
+    background: #fc5537;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-left:50px; /* Make text transparent */
+}
+
+.content {
+    font-size: 16px;
+    background:#fc5537;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.content .section-title {
+    font-weight: bold;
+    background: #fc5537;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 30px;
+}
+
+.content .input-group {
+    margin-bottom: 20px;
+}
+
+.content .input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.content .input-group select,
+.content .input-group input {
+    width: calc(100% - 50px);
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    background-color: #F0F8FF;
+    display: inline-block;
+}
+
+.content .input-group button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background:#fc5537;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.hidden {
+    display: none;
+}
+.submit-btn {
+            display: block;
+            background-color:#fc5537;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 35px auto 0px auto;
+            text-align: center;
+        }

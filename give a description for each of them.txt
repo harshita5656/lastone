@@ -1,0 +1,56 @@
+give a description for each of them using these data 
+Hierarchy of Name Servers
+The solution to these problems is to distribute the information among many computers
+called DNS servers. One way to do this is to divide the whole space into many domains
+based on the first level. In other words, we let the root stand alone and create as many
+domains (subtrees) as there are first-level nodes. Because a domain created this way
+could be very large, DNS allows domains to be divided further into smaller domains                                    Zone
+Since the complete domain name hierarchy cannot be stored on a single server, it is
+divided among many servers. What a server is responsible for or has authority over is
+called a zone. We can define a zone as a contiguous part of the entire tree. If a server
+accepts responsibility for a domain and does not divide the domain into smaller
+domains, the “domain” and the “zone” refer to the same thing. The server makes a database
+called a zone file and keeps all the information for every node under that domain.
+However, if a server divides its domain into subdomains and delegates part of its
+authority to other servers, “domain” and “zone” refer to different things. The information
+about the nodes in the subdomains is stored in the servers at the lower levels, with
+the original server keeping some sort of reference to these lower-level servers. Of
+course, the original server does not free itself from responsibility totally. It still has a
+zone, but the detailed information is kept by the lower-level servers (see Figure 26.33).
+(subdomains). Each server can be responsible (authoritative) for either a large or small
+domain. In other words, we have a hierarchy of servers in the same way that we have a
+hierarchy of names (see Figure 26.32).                                                                                                            A root server is a server whose zone consists of the whole tree. A root server usually
+does not store any information about domains but delegates its authority to other servers,
+keeping references to those servers. There are several root servers, each covering the
+whole domain name space. The root servers are distributed all around the world.                                                     Primary and Secondary Servers
+DNS defines two types of servers: primary and secondary. A primary server is a server
+that stores a file about the zone for which it is an authority. It is responsible for creating,
+maintaining, and updating the zone file. It stores the zone file on a local disk.
+A secondary server is a server that transfers the complete information about a zone
+from another server (primary or secondary) and stores the file on its local disk. The secondary
+server neither creates nor updates the zone files. If updating is required, it must
+be done by the primary server, which sends the updated version to the secondary.
+The primary and secondary servers are both authoritative for the zones they serve.
+The idea is not to put the secondary server at a lower level of authority but to create
+redundancy for the data so that if one server fails, the other can continue serving clients.
+Note also that a server can be a primary server for a specific zone and a secondary server
+for another zone. Therefore, when we refer to a server as a primary or secondary server,
+we should be careful about which zone we refer to.                                                                               26.6.2 DNS in the Internet
+DNS is a protocol that can be used in different platforms. In the Internet, the domain
+name space (tree) was originally divided into three different sections: generic domains,
+country domains, and the inverse domains. However, due to the rapid growth of the
+Internet, it became extremely difficult to keep track of the inverse domains, which
+could be used to find the name of a host when given the IP address. The inverse domains
+are now deprecated (see RFC 3425). We, therefore, concentrate on the first two.
+Generic Domains
+The generic domains define registered hosts according to their generic behavior. Each
+node in the tree defines a domain, which is an index to the domain name space database
+(see Figure 26.34).                                                                                                                      Looking at the tree, we see that the first level in the generic domains section allows
+14 possible labels. These labels describe the organization types as listed in Table 26.12.
+Country Domains
+The country domains section uses two-character country abbreviations (e.g., us for
+United States). Second labels can be organizational, or they can be more specific
+national designations. The United States, for example, uses state abbreviations as a subdivision
+of us (e.g., ca.us.). Figure 26.35 shows the country domains section. The
+address uci.ca.us. can be translated to University of California, Irvine, in the state of
+California in the United States.
